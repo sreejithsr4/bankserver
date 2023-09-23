@@ -1,10 +1,10 @@
 const jwt=require('jsonwebtoken')
-const jwtmiddleware=(req,res,next)=>{
+const jwtMiddleware=(req,res,next)=>{
     try{
         //accesss token from headers
-        const token =req.headers("access_token")
+        const token =req.headers['access_token']
         //true /false
-        jwt.verify(token,'secretcode123')
+        jwt.verify(token,"secretkey123")
         next()
 
     }
@@ -17,4 +17,5 @@ const jwtmiddleware=(req,res,next)=>{
 
     }
 }
-module.exports={jwtmiddleware}
+
+module.exports={jwtMiddleware}

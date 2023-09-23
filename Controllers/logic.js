@@ -49,7 +49,7 @@ login = (req, res) => {
     users.findOne({ accno, psw }).then(user => {
         if (user) {
             //create token
-            const token = jwt.sign({accno},"secretcode1123")
+            const token = jwt.sign({accno},"secretkey123")
             res.status(200).json({
                 message: "login successfull",
                 status: true,
